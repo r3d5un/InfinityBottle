@@ -1,4 +1,6 @@
 using DataAccess;
+using InfinityBottleApi.Configurations;
+using InfinityBottleApi.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -28,6 +30,9 @@ builder.Services.AddDbContext<DatabaseContext>(
             "host=localhost;port=5432;database=postgres;username=postgres;password=postgres"
         )
 );
+
+builder.Services.AddAutoMapper(typeof(MapperInitializer));
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
