@@ -80,7 +80,8 @@ public class CountryController : ControllerBase
             var country = _mapper.Map<Country>(countryDto);
             await _unitOfWork.Countries.AddAsync(country);
             await _unitOfWork.CompleteAsync();
-            return Created("Country created", country);
+            var createdCountry = _mapper.Map<CountryDto>(country);
+            return Created("Country created", createdCountry);
         }
         catch (Exception ex)
         {
