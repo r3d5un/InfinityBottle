@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DataAccess.Models;
 using InfinityBottleApi.DataTransferObjects.DatabaseObjects;
 using InfinityBottleApi.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
@@ -38,5 +39,36 @@ public class CountryController : ControllerBase
         var country = await _unitOfWork.Countries.GetAsync(id);
         var result = _mapper.Map<CountryDto>(country);
         return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] CountryDto countryDto)
+    {
+        var country = _mapper.Map<Country>(countryDto);
+        await _unitOfWork.Countries.AddAsync(country);
+        await _unitOfWork.CompleteAsync();
+        return Ok();
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(string id, [FromBody] CountryDto countryDto)
+    {
+        var country = await _unitOfWork.Countries.GetAsync(id);
+        _mapper.Map(countryDto, country);
+        await _unitOfWork.CompleteAsync();
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        Country? countryToDelete = await _unitOfWork.Countries.GetAsync(id);
+        if (countryToDelete is null)
+        {
+            return NotFound();
+        }
+        _unitOfWork.Countries.RemoveAsync(countryToDelete);
+        await _unitOfWork.CompleteAsync();
+        return Ok();
     }
 }
