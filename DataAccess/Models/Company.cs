@@ -25,13 +25,17 @@ public class Company
     [Column("city")]
     public string? City { get; set; }
 
+    [MaxLength(25)]
+    [Column("postal_code")]
+    public string? PostalCode { get; set; }
+
     [MaxLength(100)]
     [Column("state")]
     public string? State { get; set; }
 
     [Column("country")]
     [ForeignKey("FK_Company_Country")]
-    public string? Country { get; set; }
+    public string? CountryId { get; set; }
 
     public ICollection<Brand> Brands { get; set; }
 }

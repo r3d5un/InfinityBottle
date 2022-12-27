@@ -110,14 +110,16 @@ namespace DataAccess.Migrations
                         .HasColumnType("varchar(2)")
                         .HasColumnName("country");
 
-                    b.Property<string>("CountryId")
-                        .HasColumnType("varchar(2)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
                         .HasColumnName("name");
+
+                    b.Property<string>("PostalCode")
+                        .HasMaxLength(25)
+                        .HasColumnType("character varying(25)")
+                        .HasColumnName("postal_code");
 
                     b.Property<string>("State")
                         .HasMaxLength(100)
