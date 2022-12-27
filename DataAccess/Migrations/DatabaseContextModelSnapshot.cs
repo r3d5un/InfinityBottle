@@ -106,8 +106,8 @@ namespace DataAccess.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("city");
 
-                    b.Property<string>("Country")
-                        .HasColumnType("text")
+                    b.Property<string>("CountryId")
+                        .HasColumnType("varchar(2)")
                         .HasColumnName("country");
 
                     b.Property<string>("CountryId")
