@@ -124,7 +124,7 @@ public class CountryController : ControllerBase
 
             _unitOfWork.Countries.RemoveAsync(countryToDelete);
             await _unitOfWork.CompleteAsync();
-            return Ok();
+            return Ok(countryToDelete);
         }
         catch (Exception ex)
         {
