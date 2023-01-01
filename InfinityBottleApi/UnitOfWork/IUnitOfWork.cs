@@ -4,6 +4,7 @@ namespace InfinityBottleApi.UnitOfWork;
 
 public interface IUnitOfWork : IDisposable
 {
+    ICategoryRepository Categories { get; }
     ICountryRepository Countries { get; }
     ICompanyRepository Companies { get; }
 

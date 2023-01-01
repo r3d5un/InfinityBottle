@@ -11,10 +11,12 @@ public class UnitOfWork : IUnitOfWork
     public UnitOfWork(DatabaseContext context)
     {
         _context = context;
+        Categories = new CategoryRepository(_context);
         Countries = new CountryRepository(_context);
         Companies = new CompanyRepository(_context);
     }
 
+    public ICategoryRepository Categories { get; private set; }
     public ICountryRepository Countries { get; private set; }
     public ICompanyRepository Companies { get; private set; }
 
