@@ -11,6 +11,8 @@ public class MapperInitializer : Profile
         CreateMap<Brand, BrandDto>().ReverseMap();
         CreateMap<Category, CategoryDto>().ReverseMap();
         CreateMap<Company, CompanyDto>().ReverseMap();
+        CreateMap<Company, CompanyGetDto>().ReverseMap();
+        CreateMap<Company, CompanyPostDto>().ReverseMap();
         CreateMap<Country, CountryDto>().ReverseMap();
         CreateMap<History, HistoryDto>().ReverseMap();
         CreateMap<InfinityBottle, InfinityBottleDto>().ReverseMap();

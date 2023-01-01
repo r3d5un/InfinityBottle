@@ -12,9 +12,11 @@ public class UnitOfWork : IUnitOfWork
     {
         _context = context;
         Countries = new CountryRepository(_context);
+        Companies = new CompanyRepository(_context);
     }
 
     public ICountryRepository Countries { get; private set; }
+    public ICompanyRepository Companies { get; private set; }
 
     public void Dispose()
     {
