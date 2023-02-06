@@ -22,13 +22,12 @@ public class InfinityBottle
 
     [Required]
     [Column("number_of_bottles")]
-    public int NumberOfBottles { get; set; }
+    public int? NumberOfBottles { get; set; }
 
     [Required]
     [Column("start_date")]
     public DateTime StartDate { get; set; }
 
-    [Required]
     [Column("end_date")]
-    public DateTime EndDate { get; set; }
+    public DateTime? EndDate { get; set; }
 }

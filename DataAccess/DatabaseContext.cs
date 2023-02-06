@@ -1,4 +1,5 @@
-﻿using DataAccess.Models;
+﻿using DataAccess.Configurations;
+using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess;
@@ -14,4 +15,14 @@ public class DatabaseContext : DbContext
     public DbSet<History> Histories { get; set; }
     public DbSet<InfinityBottle> InfinityBottles { get; set; }
     public DbSet<Whisky> Whiskies { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new BrandConfiguration());
+        modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+        modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new HistoryConfiguration());
+        modelBuilder.ApplyConfiguration(new InfinityBottleConfiguration());
+        modelBuilder.ApplyConfiguration(new WhiskyConfiguration());
+    }
 }

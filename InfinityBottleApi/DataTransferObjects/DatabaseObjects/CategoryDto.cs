@@ -14,10 +14,10 @@ public class CategoryDto
     public string Name { get; set; }
 
     [MaxLength(50)]
-    public string Region { get; set; }
+    public string? Region { get; set; }
 
     [MaxLength(50)]
-    public string SubCategory { get; set; }
+    public string? SubCategory { get; set; }
 
     public ICollection<Whisky> Whiskies { get; set; }
 }

@@ -26,11 +26,11 @@ public class Whisky
     public int CategoryId { get; set; }
 
     [Column("age")]
-    public int Age { get; set; }
+    public int? Age { get; set; }
 
     [Column("abv")]
     public int ABV { get; set; }
 
     [Column("price")]
-    public double Price { get; set; }
+    public double? Price { get; set; }
 }
