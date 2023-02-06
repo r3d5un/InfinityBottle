@@ -13,7 +13,7 @@ public class History
     public int Id { get; set; }
 
     [Column("date")]
-    public DateTime Date { get; set; }
+    public DateOnly Date { get; set; }
 
     [Column("infinity_bottle_id")]
     [ForeignKey("FK_History_InfinityBottle")]

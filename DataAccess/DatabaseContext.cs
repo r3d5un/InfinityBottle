@@ -21,6 +21,7 @@ public class DatabaseContext : DbContext
         modelBuilder.ApplyConfiguration(new BrandConfiguration());
         modelBuilder.ApplyConfiguration(new CompanyConfiguration());
         modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new CountryConfiguration());
         modelBuilder.ApplyConfiguration(new HistoryConfiguration());
         modelBuilder.ApplyConfiguration(new InfinityBottleConfiguration());
         modelBuilder.ApplyConfiguration(new WhiskyConfiguration());

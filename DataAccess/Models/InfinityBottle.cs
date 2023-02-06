@@ -26,8 +26,8 @@ public class InfinityBottle
 
     [Required]
     [Column("start_date")]
-    public DateTime StartDate { get; set; }
+    public DateOnly StartDate { get; set; }
 
     [Column("end_date")]
-    public DateTime? EndDate { get; set; }
+    public DateOnly? EndDate { get; set; }
 }
