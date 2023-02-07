@@ -15,12 +15,14 @@ public class UnitOfWork : IUnitOfWork
         Categories = new CategoryRepository(_context);
         Countries = new CountryRepository(_context);
         Companies = new CompanyRepository(_context);
+        Whiskies = new WhiskyRepository(_context);
     }
 
     public IBrandRepository Brands { get; private set; }
     public ICategoryRepository Categories { get; private set; }
     public ICountryRepository Countries { get; private set; }
     public ICompanyRepository Companies { get; private set; }
+    public IWhiskyRepository Whiskies { get; private set; }
 
     public void Dispose()
     {
