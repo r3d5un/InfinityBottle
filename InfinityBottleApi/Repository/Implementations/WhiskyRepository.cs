@@ -11,9 +11,7 @@ public class WhiskyRepository : Repository<Whisky>, IWhiskyRepository
 
     public override async Task<Whisky?> GetAsync(int id)
     {
-        IQueryable<Whisky> query = Context
-            .Set<Whisky>()
-            .Where(category => category.CategoryId == id);
+        IQueryable<Whisky> query = Context.Set<Whisky>().Where(category => category.WhiskyId == id);
         return await query.AsNoTracking().FirstOrDefaultAsync();
     }
 }
