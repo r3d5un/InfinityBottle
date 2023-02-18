@@ -8,6 +8,7 @@ public interface IUnitOfWork : IDisposable
     ICategoryRepository Categories { get; }
     ICountryRepository Countries { get; }
     ICompanyRepository Companies { get; }
+    IHistoryRepository Histories { get; }
     IInfinityBottleRepository InfinityBottles { get; }
     IWhiskyRepository Whiskies { get; }
 
